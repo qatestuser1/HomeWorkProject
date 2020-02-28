@@ -57,6 +57,10 @@ public class Main {
         SumMinAndMax sum = new SumMinAndMax();
         int[] array = sum.getArray();
         System.out.println(sum.calculateSumMaxAndMin(sum.findMax(array), sum.findMin(array)));
+
 	 */
+	int i = 0;
+
+
     }
 }
