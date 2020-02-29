@@ -4,16 +4,19 @@ import java.util.Scanner;
 
 public class Methods {
 
-    public static int[] scanArray(){
+    public static ArrayList<Integer> scanArrayList(){
         System.out.println("Input size of array:");
         Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
 
-        int[] array = new int[sc.nextInt()];
+        ArrayList<Integer> array = new ArrayList<>(size);
         System.out.println("Input array:");
-        for(int i = 0; i < array.length; i++)
-            array[i] = sc.nextInt();
+
+        for(int i = 0; i < array.size(); i++)
+            array.add(sc.nextInt());
         return array;
     }
+
     public static int findSum(int[] array, int k){
         int result = 0;
         for(int i = 0; i < array.length; i++) {
@@ -63,4 +66,23 @@ public class Methods {
         return true;
     }
 
+    public static ArrayList<Integer> arrayWithEvenNumbers(ArrayList<Integer> array){
+        ArrayList<Integer> evenArray = new ArrayList<>();
+        for(int i : array){
+            if(array.get(i) % 2 == 0)
+                evenArray.add(array.get(i));
+
+        }
+        return evenArray;
+    }
+
+    public static void printArrayWithEvenNumbers(ArrayList<Integer> array){
+        if(array.isEmpty())
+            System.out.println("There is no even elements!");
+        else{
+            System.out.println("Array with even elements:");
+            for(int i : array)
+                System.out.print(array.get(i) + "");
+        }
+    }
 }
