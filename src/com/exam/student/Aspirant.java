@@ -1,4 +1,4 @@
-package com.student;
+package com.exam.student;
 
 public class Aspirant extends Student {
     public String scienceWork;

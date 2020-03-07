@@ -1,4 +1,4 @@
-package com.student;
+package com.exam.student;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import java.lang.Math;
