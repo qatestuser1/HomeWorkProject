@@ -2,24 +2,44 @@ package com.company;
 
 public class Factorial {
      public static int calculateFactorialRecur(int x){
-        if (x == 1) {
-            return 1;
-        }
-         return x*calculateFactorialRecur(x - 1);
+         try {
+             if (x == 1) {
+                 return 1;
+             }
+             return x * calculateFactorialRecur(x - 1);
+         }
+         catch (Exception ex){
+             ex.printStackTrace();
+             System.out.println("Something went wrong.");
+             return -1;
+         }
     }
     
      public static int calculateFactorialLoop(int x){
-         int result = 1;
-         for (int i = 1; i <= x; i++)
-             result *= i;
-         return result;
+         try {
+             int result = 1;
+             for (int i = 1; i <= x; i++)
+                 result *= i;
+             return result;
+         }
+         catch (Exception ex){
+             ex.printStackTrace();
+             System.out.println("Something went wrong.");
+             return -1;
+         }
      }
 
      public static int calculateSumFactorial(){
          int sum = 0;
-         for (int i = 1; i <= 9; i++){
-             if (i % 2 == 1)
-                 sum += calculateFactorialLoop(i);
+         try {
+             for (int i = 1; i <= 9; i++) {
+                 if (i % 2 == 1)
+                     sum += calculateFactorialLoop(i);
+             }
+         }
+         catch (Exception ex){
+             ex.printStackTrace();
+             System.out.println("Something went wrong.");
          }
          return sum;
      }

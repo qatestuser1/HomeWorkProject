@@ -4,19 +4,33 @@ import java.util.Scanner;
 
 public class Identical {
     public static boolean isIdentical(String input){
-        for (int j = 0; j < input.length(); j++)
-            for (int i = 0; i < input.length(); i++)
-               if (i != j)
-                   if (input.charAt(j) == input.charAt(i)) {
-                       return true;
-                }
-        return false;
+        try {
+            for (int j = 0; j < input.length(); j++)
+                for (int i = 0; i < input.length(); i++)
+                    if (i != j)
+                        if (input.charAt(j) == input.charAt(i)) {
+                            return true;
+                        }
+            return false;
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Something went wrong.");
+            return false;
+        }
     }
 
 
     public static String inputIdentical(){
-        Scanner in = new Scanner(System.in);
-        System.out.println("Please input a number: ");
-        return in.next();
+        try {
+            Scanner in = new Scanner(System.in);
+            System.out.println("Please input a number: ");
+            return in.next();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Something went wrong.");
+            return "-1";
+        }
     }
 }
