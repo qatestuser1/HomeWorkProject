@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 public class Methods {
+    public static final Logger log = Logger.getLogger(Methods.class);
+
     public static int findMinNumber (int a, int b){
         try {
             if (a > b)
@@ -61,10 +65,12 @@ public class Methods {
 
             for (int i = 0; i < size; i++)
                 array[i] = sc.nextInt();
+            log.info("Array is successfully scanned.");
 
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Something went wrong.");
+            log.error("Failed to scan array.", ex);
         }
         return array;
     }
@@ -365,10 +371,12 @@ public class Methods {
                 if (Math.abs(array[i]) > max)
                     array[i] = 0;
             }
+            log.info("Everything is ok.");
         }
         catch (Exception ex){
             ex.printStackTrace();
             System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return array;
     }
