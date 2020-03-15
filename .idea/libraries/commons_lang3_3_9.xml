@@ -2,7 +2,6 @@
   <library name="commons-lang3-3.9">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../commons-lang3-3.9-bin/commons-lang3-3.9/commons-lang3-3.9.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../log4j-1.2.17/apache-log4j-1.2.17/log4j-1.2.17.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
