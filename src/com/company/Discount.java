@@ -1,7 +1,7 @@
 package com.company;
 import java.util.Scanner;
 
-public class Discount {
+public class Discount extends LoggerClass {
     public static double calculatePriceWithDiscount() {
         int price = 0;
         try {
@@ -21,7 +21,7 @@ public class Discount {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }

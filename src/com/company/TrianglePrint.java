@@ -1,8 +1,6 @@
 package com.company;
 
-import java.sql.SQLOutput;
-
-public class TrianglePrint {
+public class TrianglePrint extends LoggerClass{
     public static void printing(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
@@ -10,5 +8,6 @@ public class TrianglePrint {
             }
             System.out.println();
         }
+        log.info("Triangle is successfully printed.");
     }
 }

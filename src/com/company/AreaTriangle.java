@@ -1,7 +1,7 @@
 package com.company;
 import java.lang.Math;
 
-public class AreaTriangle {
+public class AreaTriangle extends LoggerClass{
     public static double calculateArea (int a, int b, int c){
         try {
             double p = (a + b + c) / 2.0;
@@ -9,7 +9,7 @@ public class AreaTriangle {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1.0;
         }
     }

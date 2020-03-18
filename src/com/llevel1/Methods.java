@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 public class Methods {
     public static final Logger log = Logger.getLogger(Methods.class);
 
-    public static int findMinNumber (int a, int b){
+    public static int findMinNumber(int a, int b){
         try {
             if (a > b)
                 return b;
@@ -17,12 +17,11 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }
-
-    public static int findMaxNumber (int a, int b){
+    public static int findMaxNumber(int a, int b){
         try {
             if (a > b)
                 return a;
@@ -30,7 +29,7 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }
@@ -48,7 +47,7 @@ public class Methods {
                 array.add(sc.nextInt());
         } catch (Exception ex) {
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return array;
 
@@ -69,13 +68,12 @@ public class Methods {
 
         } catch (Exception ex) {
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
             log.error("Failed to scan array.", ex);
         }
         return array;
     }
 
-    public static int findSum(int[] array, int k){
+    public int findSum(int[] array, int k){
         int result = 0;
         try {
             for (int i = 0; i < array.length; i++) {
@@ -85,47 +83,50 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
          return result;
     }
 
-    public static ArrayList<Integer> zeroArray(int[] array) {
+    public ArrayList<Integer> zeroArray(int[] array) {
         ArrayList<Integer> arrayWithZero = null;
         try {
             arrayWithZero = new ArrayList<>();
-            for (int i = 0; i <= array.length; i++) {
+            for (int i = 0; i < array.length; i++) {
                 if (array[i] == 0)
                     arrayWithZero.add(i);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return arrayWithZero;
     }
 
-    public static String whichEarlier(int[] array){
+    public String whichEarlier(int[] array){
         String result = null;
         try {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] < 0) {
                     result = "Negative";
+                    break;
                 } else if (array[i] > 0) {
                     result = "Positive";
+                    break;
                 } else {
                     result = "Zero";
                 }
             }
+
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return result;
     }
 
-    public static boolean isSorted(int[] array){
+    public boolean isSorted(int[] array){
         boolean result = true;
         try {
             for (int i = 1; i < array.length; i++) {
@@ -136,14 +137,14 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             result = false;
         }
         return result;
 
     }
 
-    public static ArrayList<Integer> arrayWithEvenNumbers(ArrayList<Integer> array) {
+    public ArrayList<Integer> arrayWithEvenNumbers(ArrayList<Integer> array) {
         ArrayList<Integer> evenArray = null;
         try {
             evenArray = new ArrayList<>();
@@ -154,7 +155,7 @@ public class Methods {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return evenArray;
     }
@@ -179,7 +180,7 @@ public class Methods {
         }
 
     }
-    public static int[] replaceElements(int[] array, int z){
+    public int[] replaceElements(int[] array, int z){
         try {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] > z) {
@@ -189,18 +190,18 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return array;
     }
 
-    public static Map<Integer, String> countAmountOfPosNegZero(int[] array){
-        Map<Integer, String> result = null;
+    public Map<String, Integer> countAmountOfPosNegZero(int[] array){
+        Map<String, Integer> result = null;
         try {
             int positive = 0;
             int negative = 0;
             int zero = 0;
-            result = new HashMap<Integer, String>();
+            result = new HashMap<String, Integer>();
             for (int i = 0; i < array.length; i++) {
                 if (array[i] > 0)
                     positive++;
@@ -208,13 +209,13 @@ public class Methods {
                     negative++;
                 else zero++;
             }
-            result.put(positive, "Positive");
-            result.put(negative, "Negative");
-            result.put(zero, "Zero");
+            result.put("Positive", positive);
+            result.put("Negative", negative);
+            result.put("Zero", zero);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return result;
     }
@@ -230,7 +231,7 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }
@@ -246,12 +247,12 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }
 
-    public static int[] switchMaxAndMinInArray(int[] array){
+    public int[] switchMaxAndMinInArray(int[] array){
         try {
             int max = findMax(array);
             int min = findMin(array);
@@ -264,12 +265,12 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return array;
     }
 
-    public static ArrayList<Integer> arrayWithCondition(int[] array){
+    public ArrayList<Integer> arrayWithCondition(int[] array){
         ArrayList<Integer> resultArray = null;
         try {
             resultArray = new ArrayList<>();
@@ -280,12 +281,12 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return resultArray;
     }
 
-    public static ArrayList<Integer> arrayMod(int[] array, int m , int l){
+    public ArrayList<Integer> arrayMod(int[] array, int m , int l){
         ArrayList<Integer> resultArray = null;
         try {
             resultArray = new ArrayList<>();
@@ -296,12 +297,12 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return resultArray;
     }
 
-    public static int[] switchPairsInArray(int[] array){
+    public int[] switchPairsInArray(int[] array){
         int[] arrayRes = new int[array.length];
         try {
             for (int i = 0; i < array.length - 1; i = i + 2) {
@@ -311,12 +312,12 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return arrayRes;
     }
 
-    public static ArrayList<Integer> arrayBeforeNull(int[] array){
+    public ArrayList<Integer> arrayBeforeNull(int[] array){
         ArrayList<Integer> arrayRes = null;
         try {
             arrayRes = new ArrayList<>();
@@ -328,24 +329,24 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return arrayRes;
     }
 
-    public static int sumMaxAndMin(int[] array){
+    public int sumMaxAndMin(int[] array){
         int result = 0;
         try {
             result = findMin(array) + findMax(array);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return result;
     }
 
-    public static int findComposition(int[] array, int m){
+    public int findComposition(int[] array, int m){
         int composition = 1;
         try {
             for (int i = 0; i < array.length; i++) {
@@ -358,12 +359,12 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }
 
-    public static int[] replaceWithZeroCondition(int[] array){
+    public int[] replaceWithZeroCondition(int[] array){
         int max = 0;
         try {
             max = findMax(array);
@@ -375,16 +376,15 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
             log.error("Something went wrong.");
         }
         return array;
     }
 
-    public static Map<Integer, String> findGreaterCompositionAbs(int[] array){
-        Map<Integer, String> res = null;
+    public Map<String, Integer> findGreaterCompositionAbs(int[] array){
+        Map<String, Integer> res = null;
         try {
-            res = new HashMap<Integer, String>();
+            res = new HashMap<String, Integer>();
             int compositionPositive = 1;
             int compositionNegative = 1;
             for (int i = 0; i < array.length; i++) {
@@ -394,17 +394,17 @@ public class Methods {
                     compositionNegative *= array[i];
             }
             if (findMaxNumber(Math.abs(compositionPositive), Math.abs(compositionNegative)) == Math.abs(compositionPositive))
-                res.put(compositionPositive, "Positive");
-            else res.put(compositionNegative, "Negative");
+                res.put("Positive", compositionPositive);
+            else res.put("Negative", compositionNegative);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return res;
     }
 
-    public static int[] replaceFirstMaxElementWithZero(int[] array){
+    public int[] replaceFirstMaxElementWithZero(int[] array){
         try {
             int max = findMax(array);
             for (int i = 0; i < array.length; i++) {
@@ -416,12 +416,12 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return array;
     }
 
-    public static ArrayList<Integer> replaceArrayWithK(ArrayList<Integer> array, int k){
+    public ArrayList<Integer> replaceArrayWithK(ArrayList<Integer> array, int k){
         ArrayList<Integer> newArray = null;
         try {
             newArray = new ArrayList<>();
@@ -432,9 +432,8 @@ public class Methods {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return newArray;
     }
-
 }

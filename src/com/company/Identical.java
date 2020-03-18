@@ -2,7 +2,7 @@ package com.company;
 import java.util.Scanner;
 
 
-public class Identical {
+public class Identical extends LoggerClass {
     public static boolean isIdentical(String input){
         try {
             for (int j = 0; j < input.length(); j++)
@@ -15,7 +15,7 @@ public class Identical {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return false;
         }
     }
@@ -29,7 +29,7 @@ public class Identical {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return "-1";
         }
     }

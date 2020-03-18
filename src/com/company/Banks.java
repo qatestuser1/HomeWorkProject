@@ -1,7 +1,7 @@
 package com.company;
 import java.util.Scanner;
 
-public class Banks {
+public class Banks extends LoggerClass{
     public static int[] getBanks(){
         int[] banks = new int[0];
         try {
@@ -18,7 +18,7 @@ public class Banks {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return banks;
     }
@@ -34,7 +34,7 @@ public class Banks {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }

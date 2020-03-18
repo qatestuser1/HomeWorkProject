@@ -1,6 +1,6 @@
 package com.company;
 
-public class Triangle {
+public class Triangle extends LoggerClass{
     public static boolean isExistTriangle(int a, int b, int c){
         try {
             if (a + b < c || a + c < b || a + b < c)
@@ -9,7 +9,7 @@ public class Triangle {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return false;
         }
     }

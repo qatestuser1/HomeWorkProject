@@ -1,13 +1,15 @@
 package com.company;
 
-public class Hexagon extends AreaTriangle {
+import static com.company.AreaTriangle.calculateArea;
+
+public class Hexagon extends LoggerClass{
     public static double calculateHexagonSquare(int a){
         try {
             return 6.0 * calculateArea(a, a, a);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1.0;
         }
     }

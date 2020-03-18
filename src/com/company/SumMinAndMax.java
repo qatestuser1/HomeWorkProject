@@ -3,7 +3,7 @@ import java.sql.Array;
 import java.util.Scanner;
 
 
-public class SumMinAndMax {
+public class SumMinAndMax extends LoggerClass{
 
     public static int[] getArray(){
         int[] array = new int[0];
@@ -20,7 +20,7 @@ public class SumMinAndMax {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return array;
     }
@@ -36,7 +36,7 @@ public class SumMinAndMax {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }
@@ -52,7 +52,7 @@ public class SumMinAndMax {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }
@@ -63,7 +63,7 @@ public class SumMinAndMax {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
             return -1;
         }
     }

@@ -2,7 +2,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StringPrint {
+public class StringPrint extends LoggerClass{
     public static ArrayList<String> getStringAmountOfTimesN(){
         ArrayList<String> resultArray = null;
         try {
@@ -18,7 +18,7 @@ public class StringPrint {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return resultArray;
     }

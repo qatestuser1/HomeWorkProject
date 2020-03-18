@@ -1,6 +1,6 @@
 package com.company;
 
-public class Factorial {
+public class Factorial extends LoggerClass{
      public static int calculateFactorialRecur(int x){
          try {
              if (x == 1) {
@@ -10,7 +10,7 @@ public class Factorial {
          }
          catch (Exception ex){
              ex.printStackTrace();
-             System.out.println("Something went wrong.");
+             log.error("Something went wrong.");
              return -1;
          }
     }
@@ -24,7 +24,7 @@ public class Factorial {
          }
          catch (Exception ex){
              ex.printStackTrace();
-             System.out.println("Something went wrong.");
+             log.error("Something went wrong.");
              return -1;
          }
      }
@@ -39,7 +39,7 @@ public class Factorial {
          }
          catch (Exception ex){
              ex.printStackTrace();
-             System.out.println("Something went wrong.");
+             log.error("Something went wrong.");
          }
          return sum;
      }

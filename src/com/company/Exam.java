@@ -1,7 +1,7 @@
 package com.company;
 import java.util.Scanner;
 
-public class Exam {
+public class Exam extends LoggerClass {
     public static int calculateStudents(int[] students){
         int result = 0;
         try {
@@ -12,7 +12,7 @@ public class Exam {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return result;
     }
@@ -28,7 +28,7 @@ public class Exam {
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Something went wrong.");
+            log.error("Something went wrong.");
         }
         return result;
     }
